@@ -15,6 +15,8 @@ fn main() {
         println!("binding to {} for sending", src_addr.as_str());
         let socket = UdpSocket::bind(src_addr).expect("bind should succeed");
 
+        socket.set_broadcast(true).expect("set_broadcast to true should succeed");
+
         println!("broadcasting to {} data of {}", dest_addr.as_str(), data_to_send.as_str());
         socket
             .send_to(data_to_send.as_str().as_bytes(), format!("{}:{}", dest_addr.as_str(), LISTEN_PORT))
