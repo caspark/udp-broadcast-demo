@@ -3,7 +3,7 @@ use std::net::UdpSocket;
 use std::str;
 
 const LISTEN_PORT: u16 = 8900;
-const SRC_PORT: u16 = 8900;
+const SRC_PORT: u16 = 8901;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
